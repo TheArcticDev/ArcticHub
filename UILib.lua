@@ -20,7 +20,8 @@ local themes = {
 	Accent = Color3.fromRGB(10, 10, 10), 
 	LightContrast = Color3.fromRGB(20, 20, 20), 
 	DarkContrast = Color3.fromRGB(14, 14, 14),  
-	TextColor = Color3.fromRGB(230, 230, 230)
+	TextColor = Color3.fromRGB(230, 230, 230),
+	GUINameColor = Color3.fromRGB(155, 33, 255)
 }
 
 do
@@ -285,7 +286,7 @@ do
 						ZIndex = 5,
 						Font = Enum.Font.GothamBold,
 						Text = title,
-						TextColor3 = themes.TextColor,
+						TextColor3 = themes.GUINameColor,
 						TextSize = 14,
 						TextXAlignment = Enum.TextXAlignment.Left
 					})
@@ -2168,5 +2169,5 @@ do
 	end
 end
 
-print("dino was here :\)")
+print("Credits to Luzu for the UILib /n -Deno")
 return library
