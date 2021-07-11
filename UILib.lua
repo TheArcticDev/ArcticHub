@@ -688,17 +688,6 @@ do
 				TextTransparency = 0.10000000149012,
 				TextXAlignment = Enum.TextXAlignment.Left
 			}),
-			utility:Create("ImageLabel", {
-				Name = "Button",
-				BackgroundTransparency = 1,
-				Position = UDim2.new(1, -110, 0.5, -8),
-				Size = UDim2.new(0, 100, 0, 16),
-				ZIndex = 2,
-				Image = "rbxassetid://5028857472",
-				ImageColor3 = themes.LightContrast,
-				ScaleType = Enum.ScaleType.Slice,
-				SliceCenter = Rect.new(2, 2, 298, 298)
-			}, {
 				utility:Create("TextLabel", {
 					Name = "TextLabel", 
 					BackgroundTransparency = 1,
