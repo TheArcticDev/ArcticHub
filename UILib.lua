@@ -907,58 +907,7 @@ do
 			})
 		})
 		
-		table.insert(self.modules, textbox)
-		--self:Resize()
-		
-		local button = textbox.Button
-		local input = button.Textbox
-		
-		textbox.MouseButton1Click:Connect(function()
-		
-			if textbox.Button.Size ~= UDim2.new(0, 100, 0, 16) then
-				return
-			end
-			
-			utility:Tween(textbox.Button, {
-				Size = UDim2.new(0, 200, 0, 16),
-				Position = UDim2.new(1, -210, 0.5, -8)
-			}, 0.2)
-			
-			wait()
-
-			input.TextXAlignment = Enum.TextXAlignment.Left
-			input:CaptureFocus()
-		end)
-		
-		input:GetPropertyChangedSignal("Text"):Connect(function()
-			
-			if button.ImageTransparency == 0 and (button.Size == UDim2.new(0, 200, 0, 16) or button.Size == UDim2.new(0, 100, 0, 16)) then -- i know, i dont like this either
-				utility:Pop(button, 10)
-			end
-			
-			if callback then
-				callback(input.Text, nil, function(...)
-					self:updateTextbox(textbox, ...)
-				end)
-			end
-		end)
-		
-		input.FocusLost:Connect(function()
-			
-			input.TextXAlignment = Enum.TextXAlignment.Center
-			
-			utility:Tween(textbox.Button, {
-				Size = UDim2.new(0, 100, 0, 16),
-				Position = UDim2.new(1, -110, 0.5, -8)
-			}, 0.2)
-			
-			if callback then
-				callback(input.Text, true, function(...)
-					self:updateTextbox(textbox, ...)
-				end)
-			end
-		end)
-		
+		table.insert(self.modules, textbox)	
 		return textbox
 	end
 	
