@@ -854,20 +854,8 @@ do
 		return textlabel
 	end
 	------------------
-	function section:addTextbox(title, default, callback)
-		local textbox = utility:Create("ImageButton", {
-			Name = "Textbox",
-			Parent = self.container,
-			BackgroundTransparency = 1,
-			BorderSizePixel = 0,
-			Size = UDim2.new(1, 0, 0, 30),
-			ZIndex = 2,
-			Image = "rbxassetid://5028857472",
-			ImageColor3 = themes.DarkContrast,
-			ScaleType = Enum.ScaleType.Slice,
-			SliceCenter = Rect.new(2, 2, 298, 298)
-		}, {
-			utility:Create("TextLabel", {
+		function section:addTextbox(title, default, callback)
+		local textbox = utility:Create("TextLabel", {
 				Name = "Title",
 				AnchorPoint = Vector2.new(0, 0.5),
 				BackgroundTransparency = 1,
@@ -905,7 +893,6 @@ do
 					TextSize = 11
 				})
 			})
-		})
 		
 		table.insert(self.modules, textbox)	
 		return textbox
