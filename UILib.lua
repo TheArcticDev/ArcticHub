@@ -701,7 +701,6 @@ do
 					TextSize = 11
 				})
 			})
-		})	
 		return textlabel
 	end
 	----------------------
