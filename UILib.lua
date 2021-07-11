@@ -660,7 +660,101 @@ do
 			close()
 		end)
 	end
-	
+	----------------------
+	function section:addTextLabel(title, default, callback)
+		local textlabel = utility:Create("ImageButton", {
+			Name = "TextLabel",
+			Parent = self.container,
+			BackgroundTransparency = 1,
+			BorderSizePixel = 0,
+			Size = UDim2.new(1, 0, 0, 30),
+			ZIndex = 2,
+			Image = "rbxassetid://5028857472",
+			ImageColor3 = themes.DarkContrast,
+			ScaleType = Enum.ScaleType.Slice,
+			SliceCenter = Rect.new(2, 2, 298, 298)
+		}, {
+			utility:Create("TextLabel", {
+				Name = "Title",
+				AnchorPoint = Vector2.new(0, 0.5),
+				BackgroundTransparency = 1,
+				Position = UDim2.new(0, 10, 0.5, 1),
+				Size = UDim2.new(0.5, 0, 1, 0),
+				ZIndex = 3,
+				Font = Enum.Font.Gotham,
+				Text = title,
+				TextColor3 = themes.TextColor,
+				TextSize = 12,
+				TextTransparency = 0.10000000149012,
+				TextXAlignment = Enum.TextXAlignment.Left
+			}),
+			utility:Create("ImageLabel", {
+				Name = "Button",
+				BackgroundTransparency = 1,
+				Position = UDim2.new(1, -110, 0.5, -8),
+				Size = UDim2.new(0, 100, 0, 16),
+				ZIndex = 2,
+				Image = "rbxassetid://5028857472",
+				ImageColor3 = themes.LightContrast,
+				ScaleType = Enum.ScaleType.Slice,
+				SliceCenter = Rect.new(2, 2, 298, 298)
+			}, {
+				utility:Create("TextLabel", {
+					Name = "TextLabel", 
+					BackgroundTransparency = 1,
+					TextTruncate = Enum.TextTruncate.AtEnd,
+					Position = UDim2.new(0, 5, 0, 0),
+					Size = UDim2.new(1, -10, 1, 0),
+					ZIndex = 3,
+					Font = Enum.Font.GothamSemibold,
+					Text = default or "",
+					TextColor3 = themes.TextColor,
+					TextSize = 11
+				})
+			})
+		})
+		
+		table.insert(self.modules, textlabel)
+		--self:Resize()
+		
+		local button = textlabel.Button
+		local input = button.TextLabel
+		
+		textlabel.MouseButton1Click:Connect(function()
+		end)
+		
+		input:GetPropertyChangedSignal("Text"):Connect(function()
+			
+			if button.ImageTransparency == 0 and (button.Size == UDim2.new(0, 200, 0, 16) or button.Size == UDim2.new(0, 100, 0, 16)) then -- i know, i dont like this either
+				utility:Pop(button, 10)
+			end
+			
+			if callback then
+				callback(input.Text, nil, function(...)
+					self:updateTextLabel(textlabel, ...)
+				end)
+			end
+		end)
+		
+		input.FocusLost:Connect(function()
+			
+			input.TextXAlignment = Enum.TextXAlignment.Center
+			
+			utility:Tween(textlabel.Button, {
+				Size = UDim2.new(0, 100, 0, 16),
+				Position = UDim2.new(1, -110, 0.5, -8)
+			}, 0.2)
+			
+			if callback then
+				callback(input.Text, true, function(...)
+					self:updateTextLabel(textlabel, ...)
+				end)
+			end
+		end)
+		
+		return textlabel
+	end
+	----------------------
 	function section:addButton(title, callback)
 		local button = utility:Create("ImageButton", {
 			Name = "Button",
