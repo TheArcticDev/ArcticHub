@@ -687,7 +687,7 @@ do
 				TextSize = 12,
 				TextTransparency = 0.10000000149012,
 				TextXAlignment = Enum.TextXAlignment.Left
-			}),
+			}), {
 				utility:Create("TextLabel", {
 					Name = "TextLabel", 
 					BackgroundTransparency = 1,
@@ -700,7 +700,8 @@ do
 					TextColor3 = themes.TextColor,
 					TextSize = 11
 				})
-			})
+			}
+		})
 		return textlabel
 	end
 	----------------------
