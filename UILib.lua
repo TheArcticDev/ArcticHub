@@ -2178,5 +2178,5 @@ do
 	end
 end
 
-print("Credits to Luzu for the UILib /n -Deno")
+print("UILibrary Made By Luzu")
 return library
