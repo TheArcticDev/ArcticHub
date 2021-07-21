@@ -1,3 +1,6 @@
 # ArcticHub
 
-A little project I got started on, just something to keep me busy
+Done:
+BitCoin Miner
+
+Working On: Ultimate Driving
