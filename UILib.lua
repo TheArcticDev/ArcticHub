@@ -796,9 +796,9 @@ do
 		return toggle
 	end
 	------------------
-		function section:addTextLabel(title, default, callback)
+		function section:addTextLabel(title, name, callback)
 		local textlabel = utility:Create("ImageButton", {
-			Name = "TextLabel",
+			Name = name or "TextLabel",
 			Parent = self.container,
 			BackgroundTransparency = 1,
 			BorderSizePixel = 0,
@@ -823,18 +823,6 @@ do
 				TextTransparency = 0.10000000149012,
 				TextXAlignment = Enum.TextXAlignment.Left
 			}),
-				utility:Create("TextLabel", {
-					Name = "TextLabel", 
-					BackgroundTransparency = 1,
-					TextTruncate = Enum.TextTruncate.AtEnd,
-					Position = UDim2.new(0, 5, 0, 0),
-					Size = UDim2.new(1, -10, 1, 0),
-					ZIndex = 3,
-					Font = Enum.Font.GothamSemibold,
-					Text = default or "",
-					TextColor3 = themes.TextColor,
-					TextSize = 11
-				})
 			})
 		
 		table.insert(self.modules, textlabel)
