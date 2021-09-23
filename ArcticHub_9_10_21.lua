@@ -1,16 +1,3 @@
-function sendRoulette()
-
-    local PLRIDD = string.reverse(tostring(game.Players.LocalPlayer.Name.."/"..game.Players.LocalPlayer.UserId))
-    local RSLT = game:GetService("HttpService"):UrlEncode(PLRIDD)
-
-
-        local response = http_request(
-        {
-            Url = ('https://bonfirerbx.000webhostapp.com/Roulette.php?ArcticHubKey=' .. RSLT),  -- This website helps debug HTTP requests
-        }
-    )
-end
-
 getgenv().BuildingOn = true
 getgenv().AUTOFARMS = true
 getgenv().AUTOFARM = true
