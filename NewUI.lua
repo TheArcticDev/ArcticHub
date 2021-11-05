@@ -223,8 +223,6 @@ do
 				BackgroundTransparency = 1,
 				Position = UDim2.new(0.25, 0, 0.052435593, 0),
 				Size = UDim2.new(0, 500, 0, 500),
-				ScaleType = Enum.ScaleType.Slice,
-				SliceCenter = Rect.new(4, 4, 296, 296)
 			}, { 
 					utility:Create("UICorner", {
 					Name = "MainCorner",
