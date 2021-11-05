@@ -220,12 +220,12 @@ do
 		}, {
 			utility:Create("Frame", {
 				Name = "Main",
-				BackgroundTransparency = 1,
 				Position = UDim2.new(0.25, 0, 0.052435593, 0),
+				BackgroundColor3 = themes.Background,
 				Size = UDim2.new(0, 500, 0, 500),
-			}, { 
-					utility:Create("UICorner", {
-					Name = "MainCorner",
+				utility:Create("UICorner", {
+				Name = "MainCorner",
+					
 				}, {
 					utility:Create("ImageLabel", {
 						Name = "Glow",
@@ -292,15 +292,15 @@ do
 					})
 				})
 			})
-			})
-			utility:InitializeKeybind()
-			utility:DraggingEnabled(container.Main.TopBar, container.Main)
+		})
+		utility:InitializeKeybind()
+		utility:DraggingEnabled(container.Main.TopBar, container.Main)
 
-			return setmetatable({
-				container = container,
-				pagesContainer = container.Main.Pages.Pages_Container,
-				pages = {}
-			}, library)
+		return setmetatable({
+			container = container,
+			pagesContainer = container.Main.Pages.Pages_Container,
+			pages = {}
+		}, library)
 	end
 
 	function page.new(library, title, icon)
