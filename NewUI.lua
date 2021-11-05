@@ -218,15 +218,16 @@ do
 			Name = title,
 			Parent = game.CoreGui
 		}, {
-			utility:Create("ImageLabel", {
+			utility:Create("Frame", {
 				Name = "Main",
 				BackgroundTransparency = 1,
 				Position = UDim2.new(0.25, 0, 0.052435593, 0),
-				Size = UDim2.new(0, 511, 0, 428),
-				Image = "rbxassetid://4641149554",
-				ImageColor3 = themes.Background,
+				Size = UDim2.new(0, 500, 0, 500),
 				ScaleType = Enum.ScaleType.Slice,
 				SliceCenter = Rect.new(4, 4, 296, 296)
+			}, {			
+				utility:Create("UICorner", {
+				Name = "MainCorner",
 			}, {
 				utility:Create("ImageLabel", {
 					Name = "Glow",
@@ -234,7 +235,7 @@ do
 					Position = UDim2.new(0, -15, 0, -15),
 					Size = UDim2.new(1, 30, 1, 30),
 					ZIndex = 0,
-					Image = "rbxassetid://5028857084",
+					Image = "rbxassetid://7910196774",
 					ImageColor3 = themes.Glow,
 					ScaleType = Enum.ScaleType.Slice,
 					SliceCenter = Rect.new(24, 24, 276, 276)
