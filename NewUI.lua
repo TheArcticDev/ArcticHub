@@ -2264,13 +2264,4 @@ end
 
 themes = darkmode
 
-print("AA")
-local Test = library.new("Arctic Hub")
-wait(0.5)
-print(Test)
-local M = Test:addPage("Local", 5012544693)
-local Player = M:addSection("Local stuff")
-local QAP = M:addSection("Quick Access")
-local ree = QAP:addButton("Test", function()
-	print("Hello")		
-end)
+print("Credits to Dino for the UI Lib\nEdited by ArcticDev")
