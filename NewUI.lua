@@ -1,7 +1,3 @@
-if game:GetService("CoreGui"):FindFirstChild("Arctic Hub") then
-	game:GetService("CoreGui"):FindFirstChild("Arctic Hub"):remove()
-end
-
 --Player
 local player = game:GetService("Players").LocalPlayer
 local mouse = player:GetMouse()
