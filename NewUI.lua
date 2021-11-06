@@ -561,7 +561,7 @@ do
 
 		if self.position then
 			utility:Tween(container, {
-				Size = UDim2.new(0, 511, 0, 428),
+				Size = UDim2.new(0, 500, 0, 500),
 				Position = self.position
 			}, 0.2)
 			wait(0.2)
@@ -579,8 +579,8 @@ do
 			wait(0.2)
 
 			utility:Tween(container, {
-				Size = UDim2.new(0, 511, 0, 0),
-				Position = self.position + UDim2.new(0, 0, 0, 428)
+				Size = UDim2.new(0, 500, 0, 0),
+				Position = self.position + UDim2.new(0, 0, 0, 500)
 			}, 0.2)
 			wait(0.2)
 		end
