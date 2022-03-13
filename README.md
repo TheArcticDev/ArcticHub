@@ -1,8 +1,5 @@
 # ArcticHub
 
-Done:
-BitCoin Miner
+Reworking: Bitcoin Miner!
 
-Working On: Ultimate Driving: Westover Islands
-
-Discord: https://discord.gg/Dus8XEDup5
+Discord: https://discord.gg/Htr9KfWGBD [pls join :)]
