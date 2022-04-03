@@ -3,14 +3,10 @@ function GetOwner()
 	
 	for i,v in pairs(game:GetService("Workspace").Map.Blocks:GetDescendants()) do
 		if v.Name == "OwnerFace" and v.Parent.Name == "SpawnLocation" then 
-			if v:FindFirstChild("SurfaceGui"):FindFirstChild("ImageLabel").Image ~= "rbxasset://textures/ui/GuiImagePlaceholder.png" then
-				stringy = v:FindFirstChild("SurfaceGui"):FindFirstChild("ImageLabel").Image
+			if v:FindFirstChild("SurfaceGui"):FindFirstChild("ImageLabel").Image == tostring("rbxthumb://type=AvatarHeadShot&id="..game:GetService("Players").LocalPlayer.UserId.."&w=420&h=420") then
+				stringy = tostring("rbxthumb://type=AvatarHeadShot&id="..game:GetService("Players").LocalPlayer.UserId.."&w=420&h=420")
 			end
 		end
-	end
-		
-	if stringy == tostring("rbxthumb://type=AvatarHeadShot&id="..game:GetService("Players").LocalPlayer.UserId.."&w=420&h=420") then
-		stringy = tostring("rbxthumb://type=AvatarHeadShot&id="..game:GetService("Players").LocalPlayer.UserId.."&w=420&h=420")
 	end
 
 	for i,v in pairs(game:GetService("Workspace").Map.Blocks:GetDescendants()) do
